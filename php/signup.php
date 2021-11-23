@@ -1,6 +1,9 @@
 <?php
 session_start();
 include_once "config.php";
+if(isset($_SESSION['unique_id'])){
+    header("location: users.php");
+}
 $fname=mysqli_real_escape_string($conn, $_POST['fname']);
 $lname=mysqli_real_escape_string($conn, $_POST['lname']);
 $email=mysqli_real_escape_string($conn, $_POST['email']);
